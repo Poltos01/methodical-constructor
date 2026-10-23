@@ -1,0 +1,8 @@
+build-docx:
+  image: pandoc/latex
+  script:
+    - find lesson_01 -name "*.md" | xargs cat > combined.md
+    - pandoc combined.md -o methodical.docx
+  artifacts:
+    paths:
+      - methodical.docx
